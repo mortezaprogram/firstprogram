@@ -1,5 +1,5 @@
 secret_string=""
-norm_string="1rrrrr"
+norm_string="1rrrrUUUr"
 for char in norm_string:
     secret_string+=str(ord(char)-23)
 print(secret_string)

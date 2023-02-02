@@ -19,3 +19,4 @@ input_string_upper=input_string.upper()
 input_string_split=input_string_upper.split()
 for i in input_string_split:
   print(i[0],end="")
+print()

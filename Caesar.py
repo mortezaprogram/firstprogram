@@ -1,5 +1,5 @@
 my_string=input("PLZ inter your message: ")
-key=int(input("how many shift do you need? "))
+key=int((input("how many shift do you need? ")))
 secret_message=""
 for word in my_string:
     if word.isalpha():

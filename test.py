@@ -10,9 +10,11 @@ print("The index of salam: ",first3.index("salam"))
 print("How many of salam: ",first3.count("salam"))
 for i in first3:
     print("{}:{}".format(first3.index(i),i))'''
-'''import random
+import random
 num_list=[]
 for i in range(5):
     num_list.append(random.randrange(1,90))
 print(num_list)
-'''
+
+num_list.pop(2)
+print(num_list)

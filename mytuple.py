@@ -1,0 +1,10 @@
+mytuple=(2,3,5,9,3)
+print(mytuple[0:3])
+print("Tuple len: ",len(mytuple))
+more_tuple=mytuple+(44,55,22)
+print("Are 44 in moretuple: ",44 in more_tuple)
+for i in more_tuple:
+    print(i)
+print(list(more_tuple))
+print(min(more_tuple))
+print(max(more_tuple))

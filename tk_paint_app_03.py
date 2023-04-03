@@ -4,7 +4,7 @@ from tkinter.colorchooser import *
 from tkinter import simpledialog
 from PIL import Image, ImageDraw, ImageTk
 import os
-from tkinter import filedialog
+import tkinter.filedialog
 
 root = Tk()
 root.geometry("800x600")
@@ -12,8 +12,8 @@ root.geometry("800x600")
 class PaintApp:
     text_font = StringVar()
     text_size = IntVar()
-    bold_text = IntVar()
-    italic_text = IntVar()
+    bold_text = StringVar()
+    italic_text = StringVar()
 
     drawing_tool=StringVar()
 
@@ -57,7 +57,7 @@ class PaintApp:
         file_menu.add_command(label="Save",command=self.save_file)
         file_menu.add_separator()
         file_menu.add_command(label="Quit",command=self.quit_app)
-        file_menu.add_cascade(label="File",menu=file_menu)
+        the_menu.add_cascade(label="File",menu=file_menu)
 
 
         font_menu=Menu(the_menu,tearoff=0)
@@ -76,7 +76,7 @@ class PaintApp:
 
         font_menu.add_checkbutton(label="Bold",variable=self.bold_text,offvalue='normal',onvalue='bold')
         font_menu.add_checkbutton(label="Italic", variable=self.italic_text, offvalue='roman', onvalue='italic')
-        the_menu.add_cascade(label="Font",menu=the_menu)
+        the_menu.add_cascade(label="Font",menu=font_menu)
 
         tool_menu = Menu(the_menu, tearoff=0)
         tool_menu.add_radiobutton(label="Pencil",variable=self.drawing_tool,value="pencil")
@@ -99,11 +99,11 @@ class PaintApp:
         the_menu.add_cascade(label="Color",menu=color_menu)
         root.config(menu=the_menu)
 
-    def left_button_down(self,event=None):
+    def left_but_down(self,event=None):
         self.left_but="down"
         self.x1_line_pt=event.x
         self.y1_line_pt=event.y
-    def left_button_up(self,event=None):
+    def left_but_up(self,event=None):
         self.left_but="up"
         self.x_pos=None
         self.y_pos=None
@@ -128,7 +128,7 @@ class PaintApp:
         if self.left_but=="down":
             if self.x_pos is not None and self.y_pos is not None:
                 event.widget.create_line(self.x_pos,self.y_pos,event.x,event.y,smooth=True,fill=self.stroke_color.get(),width=self.stroke_size.get())
-            self.draw.line([(self.x_pos, self.y_pos),(event.x, event.y)],fill=self.stroke_color.get(),width=self.stroke_size.get())
+                self.draw.line([(self.x_pos, self.y_pos),(event.x, event.y)],fill=self.stroke_color.get(),width=self.stroke_size.get())
             self.x_pos=event.x
             self.y_pos=event.y
 

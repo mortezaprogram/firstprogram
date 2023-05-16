@@ -2,10 +2,7 @@ import random
 from hangman_words import word_list
 from hangman_art import stages
 from replit import clear
-
-
 lives=6
-
 selected_word=random.choice(word_list)
 print(f"The selected word is {selected_word}.")
 guessed_word=[]
@@ -16,7 +13,6 @@ End_of_game=False
 from hangman_art import logo
 print(logo)
 while End_of_game==False:
-
     inserted_letter = input("Please insert a letter: ").lower()
     clear()
     for position in range(0,len(selected_word)):

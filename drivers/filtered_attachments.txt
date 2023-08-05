@@ -1,0 +1,4 @@
+﻿This message contained attached files that Kaspersky Security deleted during a scan.
+List of deleted files:
+- //winmail.dat//chromedriver_win32.zip//chromedriver.exe
+You can contact the administrator for detailed information.

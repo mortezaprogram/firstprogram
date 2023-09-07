@@ -1,13 +1,14 @@
 import random
 from tkinter import *
-import pandas
+from pandas import pandas
+
 current_card={}
 to_learn={}
 BACKGROUND_COLOR = "#B1DDC6"
 try:
     data = pandas.read_csv("data/fwords_to_learn.csv")
 except FileNotFoundError:
-    original_data=pandas.read_csv("data/french_words.csv")
+    original_data= pandas.read_csv("data/french_words.csv")
     to_learn=original_data.to_dict(orient="records")
 else:
     to_learn = data.to_dict(orient="records")
@@ -27,7 +28,7 @@ def flip_card():
     canvas.itemconfig(card_background,image=card_back_img)
 def is_known():
     to_learn.remove(current_card)
-    data=pandas.DataFrame(to_learn)
+    data= pandas.DataFrame(to_learn)
     data.to_csv("data/words_to_learn",index=False)
     next_card()
 

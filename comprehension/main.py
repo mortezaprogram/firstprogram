@@ -32,9 +32,9 @@ days_of_week={
 farenheight={day:temp*(9/5)+32 for day,temp in days_of_week.items()}
 print(farenheight)
 
-import pandas
+from pandas import pandas
 
-imported_dict=pandas.DataFrame(student_list_score)
+imported_dict= pandas.DataFrame(student_list_score)
 print(imported_dict)
 for (index,row) in imported_dict.iterrows():
      if row.student=="sara":

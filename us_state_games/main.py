@@ -1,5 +1,5 @@
 import turtle
-import pandas
+from pandas import pandas
 
 screen=turtle.Screen()
 screen.title("U.S. States Game")
@@ -13,7 +13,7 @@ turtle.shape(image)
 #
 # turtle.onscreenclick(get_mouse_click_coor)
 # turtle.mainloop()
-data=pandas.read_csv("50_states.csv")
+data= pandas.read_csv("50_states.csv")
 all_states=data.state.to_list()
 
 guessed_states=[]
@@ -27,7 +27,7 @@ while len(guessed_states)<50:
         # for state in all_states:
         #     if state not in guessed_states:
         #         missing_state.append(state)
-        new_data=pandas.DataFrame(missing_state)
+        new_data= pandas.DataFrame(missing_state)
         new_data.to_csv("state_to_learn.csv")
         break
     if answer_state in all_states:
